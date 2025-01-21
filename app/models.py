@@ -113,6 +113,7 @@ class Evento(models.Model):
     local = models.ForeignKey(Local, on_delete=models.CASCADE)
     cobertura = models.ForeignKey(Cobertura, on_delete=models.CASCADE)
     parceria = models.ForeignKey(Parceria, on_delete=models.CASCADE)
+    material = models.ManyToManyField(Material, on_delete=models.CASCADE)
 
     class Meta:
         verbose_name_plural = "Eventos"
