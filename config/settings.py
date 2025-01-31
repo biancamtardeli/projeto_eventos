@@ -81,7 +81,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'projeto_eventos',
         'USER': 'postgres',
-        'PASSWORD': '123456',
+        'PASSWORD': '132022',
         'HOST': 'localhost',
         'PORT': '5432',
     }

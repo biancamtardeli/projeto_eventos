@@ -14,19 +14,39 @@ class IndexView(View):
 
 class CategoriaView(View):
     def get(self, request):
-      page = "index.html"
+      page = "categoria.html"
       context = {
         "categorias": Categoria.objects.all()
       }
       return render(request, page, context)
     def post(self, request):
        pass
-
-class TipoDivulgacaoView(View):
+    
+class UFView(View):
     def get(self, request):
-      page = "tipoDivulgacao.html"
+      page = "uf.html"
       context = {
-        "tiposDivulgacao": TipoDivulgacao.objects.all()
+        "ufs": UF.objects.all()
+      }
+      return render(request, page, context)
+    def post(self, request):
+       pass
+    
+class CidadeView(View):
+    def get(self, request):
+      page = "cidade.html"
+      context = {
+        "cidades": Cidade.objects.all()
+      }
+      return render(request, page, context)
+    def post(self, request):
+       pass
+    
+class InstituicaoView(View):
+    def get(self, request):
+      page = "instituicao.html"
+      context = {
+        "instituicoes": Instituicao.objects.all()
       }
       return render(request, page, context)
     def post(self, request):
@@ -62,7 +82,7 @@ class LocalView(View):
     def post(self, request):
        pass
 
-class MateriaisView(View):
+class MaterialView(View):
     def get(self, request):
       page = "material.html"
       context = {
@@ -107,6 +127,46 @@ class EventoView(View):
       page = "evento.html"
       context = {
         "eventos": Evento.objects.all()
+      }
+      return render(request, page, context)
+    def post(self, request):
+       pass
+    
+class ColaboradorView(View):
+    def get(self, request):
+      page = "colaborador.html"
+      context = {
+        "colaboradores": Colaborador.objects.all()
+      }
+      return render(request, page, context)
+    def post(self, request):
+       pass
+    
+class TipoCoberturaView(View):
+    def get(self, request):
+      page = "tipoCobertura.html"
+      context = {
+        "tiposCobertura": TipoCobertura.objects.all()
+      }
+      return render(request, page, context)
+    def post(self, request):
+       pass
+    
+class TipoParceriaView(View):
+    def get(self, request):
+      page = "tipoParceria.html"
+      context = {
+        "tiposParceria": TipoParceria.objects.all()
+      }
+      return render(request, page, context)
+    def post(self, request):
+       pass
+    
+class DivulgacaoView(View):
+    def get(self, request):
+      page = "divulgacao.html"
+      context = {
+        "divulgacoes": Divulgacao.objects.all()
       }
       return render(request, page, context)
     def post(self, request):

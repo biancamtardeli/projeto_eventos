@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Material</title>
+        <title>Divulgação</title>
         <!-- Incluindo Bootstrap CSS -->
         <link rel="stylesheet"
             href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -84,20 +84,25 @@
         </nav>
 
         <div class="container mt-5">
-            <h1 class="mb-4">Material</h1>
+            <h1 class="mb-4">Divulgacao</h1>
             <table class="table table-bordered">
                 <thead>
                     <tr>
                         <th scope="col">Nome</th>
-                        <th scope="col">Quantidade</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Telefone</th>
+                        <th scope="col">Cargo</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {% for materiais in materiais %}
+                    {% for coberturas in coberturas %}
                     <tr>
-                        <td>{{ materiais.nome_material }}</td>
-                        <td>{{ materiais.qtd }}</td>
+                        <td>{{ coberturas.nome_colaborador }}</td>
+                        <td>{{ coberturas.email }}</td>
+                        <td>{{ coberturas.telefone }}</td>
+                        <td>{{ coberturas.cargo }}</td>
                     </tr>
+
                     {% endfor %}
                 </tbody>
             </table>

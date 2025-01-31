@@ -1,53 +1,36 @@
 from django.contrib import admin
 from .models import *
 
-class CategoriaAdmin(admin.ModelAdmin):
-    model = Categoria
-    #inlines = [DisciplinaInline]
+class CidadeInline(admin.TabularInline):
+    model = Cidade
+    extra = 1
 
-class TipoDivulgacaoAdmin(admin.ModelAdmin):
-    model = TipoDivulgacao
-    #inlines = [DisciplinaInline]
+class UFAdmin(admin.ModelAdmin):
+    model = UF
+    inlines = [CidadeInline]
+
+class DivulgacaoeInline(admin.TabularInline):
+    model = Divulgacao
+    extra = 1
 
 class MeioDivulgacaoAdmin(admin.ModelAdmin):
     model = MeioDivulgacao
-    #inlines = [DisciplinaInline]
+    inlines = [CidadeInline]
 
-class PublicoAdmin(admin.ModelAdmin):
-    model = Publico
-    #inlines = [DisciplinaInline]
 
-class LocalAdmin(admin.ModelAdmin):
-    model = Local
-    #inlines = [DisciplinaInline]
-
-class MaterialAdmin(admin.ModelAdmin):
-    model = Material
-    #inlines = [DisciplinaInline]
-
-class ParceriaAdmin(admin.ModelAdmin):
-    model = Parceria
-    #inlines = [DisciplinaInline]
-
-class CoberturaAdmin(admin.ModelAdmin):
-    model = Cobertura
-    #inlines = [DisciplinaInline]
-
-class OrganizadorAdmin(admin.ModelAdmin):
-    model = Organizador
-    #inlines = [DisciplinaInline]
-
-class EventoAdmin(admin.ModelAdmin):
-    model = Evento
-    #inlines = [DisciplinaInline]
-
-admin.site.register(Categoria, CategoriaAdmin)
-admin.site.register(TipoDivulgacao, TipoDivulgacaoAdmin)
-admin.site.register(MeioDivulgacao, MeioDivulgacaoAdmin)
-admin.site.register(Publico, PublicoAdmin)
-admin.site.register(Local, LocalAdmin)
-admin.site.register(Material, MaterialAdmin)
-admin.site.register(Parceria, ParceriaAdmin)
-admin.site.register(Cobertura, CoberturaAdmin)
-admin.site.register(Organizador, OrganizadorAdmin)
-admin.site.register(Evento, EventoAdmin)
+admin.site.register(Categoria)
+admin.site.register(UF, UFAdmin)
+admin.site.register(Cidade)
+admin.site.register(Instituicao)
+admin.site.register(Divulgacao)
+admin.site.register(MeioDivulgacao)
+admin.site.register(Publico)
+admin.site.register(Local)
+admin.site.register(Material)
+admin.site.register(Parceria)
+admin.site.register(Cobertura)
+admin.site.register(TipoCobertura)
+admin.site.register(Colaborador)
+admin.site.register(TipoParceria)
+admin.site.register(Organizador)
+admin.site.register(Evento)
