@@ -127,21 +127,9 @@ class Cobertura(models.Model):
         verbose_name_plural = "Coberturas"
 
     def __str__(self):
-        return self.cobertura_colaborador
+        return f'{self.cobertura_colaborador}'
     
 
-class Organizador(models.Model):
-    nome_organizador = models.CharField(max_length=100, default='')
-    instituicao = models.CharField(max_length=100, default='')
-    email = models.EmailField(max_length=50, default='')
-    telefone = models.CharField(max_length=13, default='')
-
-    class Meta:
-        verbose_name_plural = "Organizadores"
-        
-    def __str__(self):
-        return f'{self.nome_organizador}'
-    
 class Instituicao(models.Model):
     nome_instituicao = models.CharField(max_length=100, default='')
     cidade = models.ForeignKey(Cidade, on_delete=models.CASCADE, default='')
@@ -152,15 +140,30 @@ class Instituicao(models.Model):
     def __str__(self):
         return f'{self.nome_instituicao}'
     
+
+class Organizador(models.Model):
+    nome_organizador = models.CharField(max_length=100, default='')
+    instituicao = models.ForeignKey(Instituicao, on_delete=models.CASCADE, default='')
+    email = models.EmailField(max_length=50, default='')
+    telefone = models.CharField(max_length=13, default='')
+
+    class Meta:
+        verbose_name_plural = "Organizadores"
+        
+    def __str__(self):
+        return f'{self.nome_organizador}'
+    
+
 class Divulgacao(models.Model):
     cobertura = models.ForeignKey(Cobertura, on_delete=models.CASCADE, default='')
+    meio_divulgacao = models.ForeignKey(MeioDivulgacao, on_delete=models.CASCADE, default='')
     divulgacao = models.CharField(max_length=100, default='')
 
     class Meta:
         verbose_name_plural = "Divulgações"
         
     def __str__(self):
-        return self.meio_divulgacao
+        return f'{self.divulgacao}'
 
 
 class Evento(models.Model):
