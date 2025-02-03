@@ -104,7 +104,7 @@
                     <td>{{ eventos.parceria }}</td>
                     <td>
                         {% for item in eventos.material.all %}
-                            {{ item.nome }}{% if not forloop.last %}, {% endif %}
+                            {{ item.nome_material }}{% if not forloop.last %}, {% endif %}
                         {% endfor %}
                     </td>
                 </tr>
